@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Uwagi do MPZP Kobierzyńska</h3>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}<br>
+        </p>
+        <p>
+            {{ form.street.label }}<br>
+            {{ form.street(size=64) }}<br>
+        </p>
+        <p>
+            {{ form.city.label }}<br>
+            {{ form.city(size=32) }}<br>
+        </p>
+        <p>{{ form.green_general() }} {{ form.green_general.label }}</p>
+        <p>{{ form.green_roofs() }} {{ form.green_roofs.label }}</p>
+        <p>{{ form.green_mw11() }} {{ form.green_mw11.label }}</p>
+        <p>{{ form.green_mw14() }} {{ form.green_mw14.label }}</p>
+        <p>{{ form.green_mw15() }} {{ form.green_mw15.label }}</p>
+        <p>{{ form.green_mwu6() }} {{ form.green_mwu6.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <hr>
+    <p>Więcej informacji na stronie <a href="http://www.zielonakobierzynska.pl">Zielona Kobierzyńska</a></p>
+    <p>Zdjęcie poglądowe: teren objęty planem wg. Google Maps</p>
+    <img src="https://leftfish.github.io/zielonakobierzynska/mapa_stan_obecny.jpg" alt="Kobierzyńska: zdjęcie lotnicze">
+    
+{% endblock %}

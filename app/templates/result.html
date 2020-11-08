@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>     
+    {% for info in person %}
+        {{info.data}}<br>
+    {% endfor %}
+    </p>
+    
+    <h3>Uwagi do projektu miejscowego planu zagospodarowania przestrzennego obszaru "Kobierzyńska"</h3>
+    
+    <p>W związku z ogłoszeniem Prezydenta Miasta Krakowa z dnia 2 października 2020 r. składam następujące uwagi:</p>
+    
+    {%for option in options %}
+        <p><strong>{{option['header']}}</strong></p>
+        <p>{{option['text']}}</p>
+    {% endfor %}
+{% endblock %}
