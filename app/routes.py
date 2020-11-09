@@ -11,7 +11,7 @@ def index():
     if form.validate_on_submit():
         
         person_data = [form.name, form.street, form.city]
-        other_remarks = [form.green_roofs, form.green_mw11, form.green_mw14, form.green_mw15, form.green_mwu6]
+        other_remarks = [form.green_roofs, form.green_mw11, form.green_mw12, form.green_mw14, form.green_mw15, form.green_mwu6]
         opt_data = [form.green_general] + sample(other_remarks, len(other_remarks))
         
         options = []

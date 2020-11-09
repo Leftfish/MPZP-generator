@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <p> Poniżej wzór dokumentu przygotowany na podstawie formularza. Oczywiście można go zmieniać i wprowadzać własne uwagi.</p> 
+    <p>Całość, z podaniem imienia, nazwiska i adresu, należy do 23 listopada 2020 r. wysłać na adres <a href="mailto:uwagi-bp@um.krakow.pl">uwagi-bp@um.krakow.pl</a></p>
+    <hr>
     <p>     
     {% for info in person %}
         {{info.data}}<br>
