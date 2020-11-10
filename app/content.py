@@ -53,3 +53,7 @@ TXT = {"green_general":
             '''
         }
     }
+
+TITLE_TXT = "Uwagi do projektu miejscowego planu zagospodarowania przestrzennego obszaru \"Kobierzyńska\""
+INTRO_TXT = "W związku z ogłoszeniem Prezydenta Miasta Krakowa z dnia 2 października 2020 r. składam następujące uwagi:"
+
