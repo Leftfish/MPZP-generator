@@ -10,12 +10,14 @@
     {% endfor %}
     </p>
     
-    <h3>Uwagi do projektu miejscowego planu zagospodarowania przestrzennego obszaru "Kobierzyńska"</h3>
+    <h3>{{title}}</h3>
     
-    <p>W związku z ogłoszeniem Prezydenta Miasta Krakowa z dnia 2 października 2020 r. składam następujące uwagi:</p>
+    <p>{{intro}}</p>
     
     {%for option in options %}
         <p><strong>{{option['header']}}</strong></p>
         <p>{{option['text']}}</p>
     {% endfor %}
+
+    <a href={{"mailto:uwagi-bp@um.krakow.pl?body=" ~ email_body ~ "&subject=" ~ email_subject}}>Edytuj i wyślij</a>
 {% endblock %}
