@@ -1,6 +1,7 @@
 from flask import render_template
-from app import app, content, content_factory
+from app import app, content as static_content, content_factory
 from app.forms import ChooseOptions
+import urllib
 
 from random import sample
 
@@ -23,7 +24,15 @@ def index():
                     options.append(content)
                 except:
                     pass
-                
+        raw_mail = content_factory.build_raw_mail_content(static_content.TITLE_TXT, static_content.INTRO_TXT, options, person_data)
+        encoded_mail = urllib.parse.quote(raw_mail)
 
-        return render_template("result.html", person=person_data, options=options)
+        return render_template(
+            "result.html",
+            person=person_data,
+            options=options,
+            title=static_content.TITLE_TXT,
+            intro=static_content.INTRO_TXT,
+            email_body=encoded_mail,
+            email_subject=urllib.parse.quote(static_content.TITLE_TXT))
     return render_template('index.html', title='Uwagi do MPZP Kobierzyńska', form=form)
