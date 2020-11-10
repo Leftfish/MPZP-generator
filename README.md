@@ -7,3 +7,10 @@ Ponieważ to mój pierwszy w życiu kontakt z frameworkiem Flask, a na przygotow
 Ale działa...
 
 Dostępne [na Heroku](https://generator-uwag-mpzp.herokuapp.com/).
+
+# Uruchom lokalnie
+
+Polecam pythona 3 ze względu na wsparcie ASCII dla polskich znaków. 
+
+- `pip install -r requirements.txt`
+- `flask run`
