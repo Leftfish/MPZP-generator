@@ -1,41 +1,114 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h3>Uwagi do MPZP Kobierzyńska</h3>
-    <p>Poniższy formularz pozwala automatycznie przygotować pismo z uwagami do projektu miejscowego planu zagospodarowania przestrzennego dla okolic ul. Kobierzyńskiej.
-        Uwagi do planu będą zbierane do <strong>23 listopada 2020 r.</strong> Urząd Miasta rozpatrzy tylko uwagi, które wpłyną najpóźniej w tej dacie. Więcej informacji o planie i uwagach do niego można znaleźć na stronie <a href="http://www.zielonakobierzynska.pl">Zielona Kobierzyńska</a>.
+<main>
+    <h2>Uwagi do MPZP Kobierzyńska</h2>
+    <p class="paragraph" id="intro">Poniższy formularz pozwala automatycznie
+        przygotować pismo z uwagami do projektu miejscowego planu
+        zagospodarowania przestrzennego dla okolic ul. Kobierzyńskiej.
+        Uwagi do planu będą zbierane do <strong><span id="finish-date">23
+                listopada 2020 r.</strong></span> Urząd Miasta rozpatrzy tylko
+        uwagi, które wpłyną najpóźniej w tej dacie. Więcej informacji o planie i
+        uwagach do niego można znaleźć na stronie <a
+            href="http://www.zielonakobierzynska.pl">Zielona Kobierzyńska</a>.
     </p>
-    <p>Aby skorzystać z formularza, należy wybrać rodzaj uwag i kliknąć przycisk "Przygotuj pismo". Wyświetli się kolejna strona z gotowym dokumentem, który należy przesłać na adres <a href="mailto:uwagi-bp@um.krakow.pl">uwagi-bp@um.krakow.pl</a>
-    Twórcy formularza nie zbierają żadnych danych osobowych - imię, nazwisko i adres pojawią się tylko na piśmie, które wyświetli się po użyciu formularza i które należy potem wysłać przez e-mail do Urzędu Miasta. Urząd nie wymaga, aby uwagi były podpisane podpisem elektronicznym, ale <strong>podanie imienia, nazwiska i adresu w e-mailu wysłanym do Urzędu jest konieczne</strong>.</p>
-    <p>Chętnie odpowiem na pytania - można się ze mną kontaktować pod adresem <a href="mailto:kobierzynskampzp@gmail.com">kobierzynskampzp@gmail.com</a>.</p>
-    <p>Bohdan Widła</p>
-    <hr>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
+
+    <div class="widla-info"><p>Chętnie odpowiem na pytania - można się ze mną
+            kontaktować pod
+            adresem <a
+                href="mailto:kobierzynskampzp@gmail.com">kobierzynskampzp@gmail.com</a>.</p>
+        <p>Bohdan Widła</p>
         <p>
-            {{ form.name.label }}<br>
-            {{ form.name(size=32) }}<br>
-        </p>
-        <p>
-            {{ form.street.label }}<br>
-            {{ form.street(size=64) }}<br>
-        </p>
-        <p>
-            {{ form.city.label }}<br>
-            {{ form.city(size=32) }}<br>
-        </p>
-        <p>{{ form.green_general() }} {{ form.green_general.label }}</p>
-        <p>{{ form.green_roofs() }} {{ form.green_roofs.label }}</p>
-        <p>{{ form.green_mw11() }} {{ form.green_mw11.label }}</p>
-        <p>{{ form.green_mw12() }} {{ form.green_mw12.label }}</p>
-        <p>{{ form.green_mw14() }} {{ form.green_mw14.label }}</p>
-        <p>{{ form.green_mw15() }} {{ form.green_mw15.label }}</p>
-        <p>{{ form.green_mwu6() }} {{ form.green_mwu6.label }}</p>
-        <p>{{ form.submit() }}</p>
-    </form>
-    <hr>
-    
-    <p>Zdjęcie poglądowe: teren objęty planem wg. Google Maps</p>
-    <img src="https://leftfish.github.io/zielonakobierzynska/mapa_stan_obecny.jpg" alt="Kobierzyńska: zdjęcie lotnicze">
-    
-{% endblock %}
+        </div>
+
+        <div id="procedure-instruction">
+            <h3>① Wypełnij swoje dane </h3>
+
+            <p class="explanation">Uzupełnij swoje dane osobowe w formularzu
+                poniżej.<br> <br>
+
+                <p id="disclaimer">Twórcy formularza <strong>nie zbierają</strong>
+                    żadnych danych osobowych - imię,
+                    nazwisko
+                    i adres pojawią się tylko na piśmie, które wyświetli się po
+                    użyciu
+                    formularza i które należy potem wysłać przez e-mail do
+                    Urzędu
+                    Miasta.
+                    Urząd nie wymaga, aby uwagi były podpisane podpisem
+                    elektronicznym,
+                    ale
+                    <strong>podanie imienia, nazwiska i adresu w e-mailu
+                        wysłanym do
+                        Urzędu
+                        jest konieczne</strong>.</p></p>
+
+            <h3>② Wybierz uwagi</h3>
+
+            <p class="explanation">Wybierz uwagi, które chciałbyś/aś zawrzeć w
+                piśmie. </p>
+
+            <h3>③ Przygotuj pismo</h3>
+
+            <p class="explanation">Kliknij w przycisk "Przygotuj pismo". Na
+                kolejnej stronie wyświetli
+                się podgląd gotowego dokumentu.
+
+                <h3>④ Edytuj i wyślij</h3>
+
+
+                <p class="explanation">Po wyświetleniu się nowej podstrony,
+                    kliknij w przycisk <strong>Edytuj i wyślij</strong> aby
+                    otworzyć twojego domyślnego
+                    klienta email, bądź
+                    skopiuj tekst z podglądu i wyślij go samodzielnie na adres
+                    <a
+                        href="mailto:uwagi-bp@um.krakow.pl">uwagi-bp@um.krakow.pl</a></p>
+            </div>
+
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <div class="personal-data">
+                    <p>
+                        {{ form.name.label }}<br>
+                        {{ form.name(size=32) }}<br>
+                    </p>
+                    <p id="personal-data-long-field">
+                        {{ form.street.label }}<br>
+                        {{ form.street(size=64) }}<br>
+                    </p>
+                    <p>
+                        {{ form.city.label }}<br>
+                        {{ form.city(size=32) }}<br>
+                    </p>
+
+                </div>
+                <div class="form-checkboxes">
+                    <p class="form-option">{{ form.green_general() }} {{
+                        form.green_general.label }}</p>
+                    <p class="form-option">{{ form.green_roofs() }} {{
+                        form.green_roofs.label }}</p>
+                    <p class="form-option">{{ form.green_mw11() }} {{
+                        form.green_mw11.label }}</p>
+                    <p class="form-option">{{ form.green_mw12() }} {{
+                        form.green_mw12.label }}</p>
+                    <p class="form-option">{{ form.green_mw14() }} {{
+                        form.green_mw14.label }}</p>
+                    <p class="form-option">{{ form.green_mw15() }} {{
+                        form.green_mw15.label }}</p>
+                    <p class="form-option">{{ form.green_mwu6() }} {{
+                        form.green_mwu6.label }}</p>
+                    <p class="form-option submit">{{ form.submit() }}</p>
+                </div>
+            </form>
+            <hr>
+            <div id="photo-box">
+                <p>Zdjęcie poglądowe: teren objęty planem wg. Google Maps</p>
+                <img
+                    src="https://leftfish.github.io/zielonakobierzynska/mapa_stan_obecny.jpg"
+                    alt="Kobierzyńska: zdjęcie lotnicze"
+                    id="changes-map">
+
+            </div>
+        </main>
+        {% endblock %}
