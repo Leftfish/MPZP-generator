@@ -1,11 +1,12 @@
 html {
   background-color: #fdfdfd;
+
 }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: inherit;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
 }
 
@@ -32,23 +33,40 @@ main p {
 
 @media only screen and (min-width: 768px) {
   main {
-    margin: 8em 22em;
+    margin: 8em 26em;
   }
 }
 
 @media only screen and (max-width: 768px) {
   main {
-    margin: 4em 3em;
+    margin: 8em 3em;
   }
 
   nav {
     position: absolute;
     margin: 0em 1em;
   }
+
+  #personal-data-long-field input{
+    width: 100%;
+  }
+
+  #changes-map {
+    width: 300px;
+  }
 }
 
 .paragraph {
   padding-bottom: 2em;
+}
+
+.explanation {
+  font-size: 1.1em;
+}
+
+.widla-info {
+  font-size: 1em;
+  margin-top: 0.3em;
 }
 
 #intro {
@@ -57,4 +75,71 @@ main p {
 
 #finish-date {
   color: #2b9539;
+}
+
+#disclaimer {
+  font-size: 0.9em;
+}
+
+#procedure-instruction {
+  background-color: #c4f8c4;
+  padding: 2em;
+  margin: 2em 0em;
+}
+
+.personal-data {
+  margin: 2em;
+}
+
+.form-checkboxes {
+  margin: 2em;
+}
+
+.form-option {
+  display: flex;
+}
+
+.form-option input {
+  margin-right: 0.5em;
+}
+
+.form-option label {
+  font-weight: 400;
+}
+ 
+.submit {
+  text-align: center;
+  display: block;
+}
+
+.submit input {
+  background-color: #c4f8c4;
+  border-radius: 1em;
+  padding: 0.5em 3em;
+  font-size: 1.2em;
+  border: 1px solid darkgrey;
+  margin: 1em;
+}
+
+#edit-and-send {
+  background-color: #c4f8c4;
+  border-radius: 1em;
+  padding: 0.5em 3em;
+  font-size: 1.2em;
+  border: 1px solid darkgrey;
+  margin: 2em;
+  text-decoration: none;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  display: block;
+}
+
+#photo-box {
+  text-align: center;
+}
+
+.doc-preview {
+  margin: 2em;
 }
