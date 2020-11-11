@@ -1,0 +1,60 @@
+html {
+  background-color: #fdfdfd;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: inherit;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+nav {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #f8fef7;
+  padding: 1em;
+  border-bottom: solid darkgrey 0.5px;
+}
+
+nav a {
+  padding: 1em;
+  font-weight: bold;
+  color: #2b9539;
+}
+
+main p {
+  margin-bottom: 0em;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    margin: 8em 22em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    margin: 4em 3em;
+  }
+
+  nav {
+    position: absolute;
+    margin: 0em 1em;
+  }
+}
+
+.paragraph {
+  padding-bottom: 2em;
+}
+
+#intro {
+  font-size: 1.3em;
+}
+
+#finish-date {
+  color: #2b9539;
+}

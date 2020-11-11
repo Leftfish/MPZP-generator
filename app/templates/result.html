@@ -1,23 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p> Poniżej wzór dokumentu przygotowany na podstawie formularza. Oczywiście można go zmieniać i wprowadzać własne uwagi.</p> 
-    <p>Całość, z podaniem imienia, nazwiska i adresu, należy do 23 listopada 2020 r. wysłać na adres <a href="mailto:uwagi-bp@um.krakow.pl">uwagi-bp@um.krakow.pl</a></p>
-    <hr>
-    <p>     
+<p> Poniżej wzór dokumentu przygotowany na podstawie formularza. Oczywiście
+    można go zmieniać i wprowadzać własne uwagi.</p>
+<p>Całość, z podaniem imienia, nazwiska i adresu, należy do 23 listopada 2020 r.
+    wysłać na adres <a href="mailto:uwagi-bp@um.krakow.pl">uwagi-bp@um.krakow.pl</a></p>
+<hr>
+<p>
     {% for info in person %}
-        {{info.data}}<br>
+    {{info.data}}<br>
     {% endfor %}
-    </p>
-    
-    <h3>{{title}}</h3>
-    
-    <p>{{intro}}</p>
-    
-    {%for option in options %}
-        <p><strong>{{option['header']}}</strong></p>
-        <p>{{option['text']}}</p>
-    {% endfor %}
+</p>
 
-    <a href={{"mailto:uwagi-bp@um.krakow.pl?body=" ~ email_body ~ "&subject=" ~ email_subject}}>Edytuj i wyślij</a>
+<h3>{{title}}</h3>
+
+<p>{{intro}}</p>
+
+{%for option in options %}
+<p><strong>{{option['header']}}</strong></p>
+<p>{{option['text']}}</p>
+{% endfor %}
+
+<a href={{" mailto:uwagi-bp@um.krakow.pl?body="~ email_body ~"&subject="~
+    email_subject}}>Edytuj i wyślij</a>
 {% endblock %}

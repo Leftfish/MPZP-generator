@@ -1,9 +1,19 @@
 {% extends 'bootstrap/base.html' %}
 
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+    href="{{url_for('.static', filename='styles/main.css')}}">
+{% endblock %}
+
 {% block title %}
-    {% if title %}{{ title }} {% else %}Uwagi do MPZP Kobierzyńska{% endif %}
+{% if title %}{{ title }} {% else %}Uwagi do MPZP Kobierzyńska{% endif %}
 {% endblock %}
 
 {% block navbar %}
-        <p><a href="{{ url_for('index') }}">Strona główna</a> | <a href="http://www.zielonakobierzynska.pl">Strona mieszkańców o MPZP Kobierzyńska</a> | <a href="https://www.bip.krakow.pl/?dok_id=101713">Strona Urzędu Miasta o MPZP Kobierzyńska</a></p>
+<nav><a href="{{ url_for('index') }}">Strona główna</a> | <a
+        href="http://www.zielonakobierzynska.pl" target="blank">Strona
+        mieszkańców o MPZP Kobierzyńska</a> | <a
+        href="https://www.bip.krakow.pl/?dok_id=101713" target="blank">Strona
+        Urzędu Miasta o MPZP Kobierzyńska</a></nav>
 {% endblock %}
